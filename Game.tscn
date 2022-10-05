@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Brick/Brick_Container.gd" type="Script" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -15,10 +15,19 @@ extents = Vector2( 100, 500 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 612, 100 )
 
+[sub_resource type="Environment" id=3]
+background_mode = 4
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.5
+glow_enabled = true
+glow_bloom = 0.02
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Wall_Container" type="Node2D" parent="."]
+[node name="Wall_Container" type="CanvasLayer" parent="."]
 
 [node name="Wall_Left" type="StaticBody2D" parent="Wall_Container"]
 script = ExtResource( 6 )
@@ -82,3 +91,6 @@ visible = false
 
 [node name="Instructions" parent="UI" instance=ExtResource( 8 )]
 pause_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )

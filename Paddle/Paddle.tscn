@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Paddle/Paddle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/pupil.png" type="Texture" id=2]
+[ext_resource path="res://Assets/mouth.png" type="Texture" id=3]
+[ext_resource path="res://Assets/eye.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 10 )
@@ -15,3 +18,27 @@ margin_bottom = 20.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 50, 10 )
 shape = SubResource( 1 )
+
+[node name="Eye2" type="Sprite" parent="."]
+position = Vector2( 80.25, -7.75 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="Pupil" type="Node2D" parent="Eye2"]
+
+[node name="Sprite" type="Sprite" parent="Eye2/Pupil"]
+texture = ExtResource( 2 )
+
+[node name="Eye1" type="Sprite" parent="."]
+position = Vector2( 20.25, -7.75 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="Pupil" type="Node2D" parent="Eye1"]
+
+[node name="Sprite" type="Sprite" parent="Eye1/Pupil"]
+texture = ExtResource( 2 )
+
+[node name="Mouth" type="Sprite" parent="."]
+position = Vector2( 50, 26 )
+texture = ExtResource( 3 )
