@@ -16,11 +16,12 @@ func _ready():
 			var Brick = load("res://Brick/Brick.tscn")
 			for rows in range(len(layout)):
 				for cols in range(len(layout[rows])):
-					var brick = Brick.instance()
-					brick.new_position = Vector2(margin.x + index.x*cols, margin.y + index.y*rows)
-					brick.position = Vector2(brick.new_position.x,-100)
-					brick.score = layout[rows][cols]
-					Brick_Container.add_child(brick)
+					if layout[rows][cols] > 0:
+						var brick = Brick.instance()
+						brick.new_position = Vector2(margin.x + index.x*cols, margin.y + index.y*rows)
+						brick.position = Vector2(brick.new_position.x,-100)
+						brick.score = layout[rows][cols]
+						Brick_Container.add_child(brick)
 		var Instructions = get_node_or_null("/root/Game/UI/Instructions")
 		if Instructions != null:
 			Instructions.set_instructions(level["name"],level["instructions"])

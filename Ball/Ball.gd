@@ -20,6 +20,7 @@ func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
 		body.hit()
 		accelerate = true
+		$Images/Highlight.modulate.a = 1.0
 	
 	
 func _integrate_forces(state):
@@ -34,6 +35,8 @@ func _integrate_forces(state):
 		state.linear_velocity.y = sign(state.linear_velocity.y) * min_speed
 	if state.linear_velocity.length() > max_speed:
 		state.linear_velocity = state.linear_velocity.normalized() * max_speed
+	if $Images/Highlight.modulate.a > 0:
+		$Images/Highlight.modulate.a -= decay
 
 func die():
 	queue_free()
