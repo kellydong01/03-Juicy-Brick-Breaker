@@ -36,4 +36,7 @@ func _input(event):
 func hit(_ball):
 	$Images/Highlight.modulate.a = 1.0
 	$Stars.emitting = true
+	var paddle_sound = get_node_or_null("/root/Game/Paddle_Sound")
+	if paddle_sound != null:
+		paddle_sound.play()
 	

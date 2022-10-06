@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/wall.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/fw_03.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Assets/fw_06.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Assets/paddle.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Assets/paddle.wav" type="AudioStream" id=13]
 [ext_resource path="res://Assets/msuic.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Assets/death.wav" type="AudioStream" id=15]
 [ext_resource path="res://UI/Camera.gd" type="Script" id=16]
@@ -232,7 +232,7 @@ volume_db = -10.0
 
 [node name="Paddle_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -5.0
+volume_db = -10.0
 pitch_scale = 0.8
 
 [node name="Fireworks_1" type="AudioStreamPlayer" parent="."]
