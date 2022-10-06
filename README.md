@@ -21,6 +21,7 @@ https://godotshaders.com/shader/fireworks/
 https://opengameart.org/content/ping-pong-sounds
 https://opengameart.org/content/25-cc0-bang-firework-sfx
 https://opengameart.org/content/8bit-death-whirl
+https://godotshaders.com/shader/fire-effect/
 
 ## Future Development
 
