@@ -45,6 +45,7 @@ texture = ExtResource( 4 )
 [node name="Pupil" type="Node2D" parent="Eye2"]
 
 [node name="Sprite" type="Sprite" parent="Eye2/Pupil"]
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
 [node name="Eye1" type="Sprite" parent="."]
@@ -55,6 +56,7 @@ texture = ExtResource( 4 )
 [node name="Pupil" type="Node2D" parent="Eye1"]
 
 [node name="Sprite" type="Sprite" parent="Eye1/Pupil"]
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
 [node name="Mouth" type="Sprite" parent="."]

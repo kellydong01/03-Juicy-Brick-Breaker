@@ -4,13 +4,13 @@ var min_speed = 100.0
 var max_speed = 600.0
 var accelerate = false
 var time_highlight = 0.3
-var time_highlight_size = 0.1
+var time_highlight_size = 0.05
 
 var wobble_period = 0.0
 var wobble_amplitude = 0.0
 export var wobble_max = 5
 var wobble_direction = Vector2.ZERO
-var decay_wobble = 0.15
+var decay_wobble = 0.3
 
 export var distort_effect = 0.0002
 
@@ -27,10 +27,10 @@ func _ready():
 
 func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
-		body.hit()
+		body.hit(self)
 		accelerate = true
 		$Tween.interpolate_property($Images/Highlight, "modulate:a", 1.0, 0.0, time_highlight, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.interpolate_property($Images/Highlight, "scale", Vector2(0.5, 0.5), Vector2(0.25, 0.25), time_highlight_size, Tween.TRANS_BOUNCE, Tween.EASE_IN)
+		$Tween.interpolate_property($Images/Highlight, "scale", Vector2(0.35, 0.35), Vector2(0.25, 0.25), time_highlight_size, Tween.TRANS_ELASTIC, Tween.EASE_IN)
 		$Tween.start()
 		wobble_direction = linear_velocity.tangent().normalized()
 		wobble_amplitude = wobble_max
@@ -52,6 +52,9 @@ func _integrate_forces(state):
 		state.linear_velocity = state.linear_velocity.normalized() * max_speed
 
 func die():
+	var die_sound = get_node_or_null("/root/Game/Death")
+	if die_sound != null:
+		die_sound.play()
 	queue_free()
 
 func wobble():

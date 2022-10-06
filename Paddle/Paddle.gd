@@ -33,6 +33,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		target.x += event.relative.x
 
-func hit():
+func hit(_ball):
 	$Images/Highlight.modulate.a = 1.0
 	$Stars.emitting = true
+	
