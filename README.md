@@ -10,7 +10,10 @@ A Brick Breaker, 10/6/2022
 A simple Brick Breaker game that is juiced up with music, particles, sound effects, and multiple levels.
 
 ## Implementation
-This game includes 4 different levels, variety of shaders to juice up the game and be more pleasing to the eyes. It includes a confined window where the player plays with a paddle and a ball. Break every brick to enter a new level. Includes a good amount of music and sound effects for each interaction between the ball and everything else.
+This game includes 4 different levels, variety of shaders to juice up the game and be more pleasing to the eyes. 
+It includes a confined window where the player plays with a paddle and a ball. 
+Break every brick to enter a new level. 
+Includes a good amount of music and sound effects for each interaction between the ball and everything else.
 
 ## References
 
